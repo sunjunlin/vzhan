@@ -1,0 +1,18 @@
+﻿{
+    "id": "processStatusSample1",
+    "Requestor": "孙俊林",
+    "RequestDate": "2015-06-01",
+    "L1Node": "主管审批",
+    "L1Approver": "上官领云 (部门领导)",
+    "L1ApproveDate": "2015-05-14",
+
+    "L2Node": "经理审批",
+    "L2Approver": "李浩",
+    "L2ApproveDate": "2015-05-14",
+
+    "L3Node": "总监审批",
+    "L3Approver": "张明",
+    "L3ApproveDate": "2015-05-14"
+ 
+
+}

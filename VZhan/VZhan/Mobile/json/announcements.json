@@ -1,0 +1,26 @@
+﻿[
+	{
+		"id":"announcementSample1", 
+		"title":"风雨整合路 十年磨一剑 TCL通讯携手IBM共同整合全新ERP系统",
+		"date":"2015-06-01",
+		"number":"NO.AAAAAAAAAAA"
+	},
+	{
+		"id":"announcementSample2", 
+		"title":"TCL通讯成都产品创新中心2015年第一季度评优结果公示",
+		"date":"2015-06-02",
+		"number":"NO.BBBBBBBBBBB"
+	},
+	{
+		"id":"announcementSample3", 
+		"title":"关于TCL通讯2014年度风云人物评选结果公示的通知",
+		"date":"2015-06-03",
+		"number":"NO.CCCCCCCCCCC"
+	},
+	{
+		"id":"announcementSample4", 
+		"title":"关于TCL通讯深圳地区2015年第一季度“季度之星”评选的通知",
+		"date":"2015-06-02",
+		"number":"NO.DDDDDDDDDDD"
+	}
+]

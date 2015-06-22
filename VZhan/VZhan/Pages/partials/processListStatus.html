@@ -1,0 +1,18 @@
+﻿ 
+
+<div class="webframe">
+     
+    <div class="process_fc">
+        <div ng-repeat="process in processStatusDetail">
+            <div class="flowchart"> {{process.ApproverName}} ({{process.ActivityName}})| {{process.Result}} | {{process.ApproveTimeStr}} </div>
+            <div style="clear:both"></div>
+            <div class="flowchart_f"> | </div>
+         
+        </div>
+        <div style="clear:both"></div>
+        <div class="flowchart_n"> {{processStatusDetail.userName}} | 当前处理人 | {{processStatusDetail.date | date:'yyyy-MM-dd HH:mm:ss'}} </div>
+        <div style="clear:both"></div>
+
+    </div>
+</div>
+

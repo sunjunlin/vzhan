@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="wxApp">
+<head>
+   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="bower_components/jquery/dist/jquery.cookie.js"></script>   
+</head>
+<body>
+    <script>
+      $(document).ready(function (){
+          var getParameterByName = function (name) {
+            if (name != undefined) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            }
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    			results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+          };
+                
+          var _redirect;
+          var generateUrl = function () {
+            var code = getParameterByName('code');
+            var state = getParameterByName('state');
+            
+            var url = '../api/WeiXinCorp/GetUser';
+            url += '?code=' + code;
+            var stateArr = state.split('@@');
+            url += '&agentid=' + stateArr[0];
+            _redirect = stateArr[1].replace('@','#');
+            
+            return url;
+          };
+          
+          var setToken = function () {
+              $.ajax({
+                  method:"GET",
+                  url:generateUrl(),
+                  dataType: 'JSON'
+              }).done(function (data) {
+                  alert(data);
+                  $.cookie("wxToken", data,{expires:10}); 
+                  window.location.href = _redirect;
+                                    //add to cookie.
+              }).error(function(error) {
+                  alert(error);
+                  console.log(error);
+              });
+          };
+          setToken();
+      });
+    </script>
+</body>
+</html>

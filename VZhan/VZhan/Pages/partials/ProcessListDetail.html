@@ -1,0 +1,81 @@
+﻿ 
+<div class="webframe">
+    
+
+    <div class="backg">
+        <div class="process_list">
+            <div class="process_title">{{processListDetail.Title}}</div>
+            <div class="process_table">
+                <div class="process_table_l">流程编号：</div>
+                <div class="process_table_r">{{processListDetail.ITNO}}</div>
+            </div>
+            <div class="process_table">
+                <div class="process_table_l">日期：</div>
+                <div class="process_table_r">{{processListDetail.CreateTime}}</div>
+            </div>
+            <div class="process_table">
+                <div class="process_table_l">填表人姓名：</div>
+                <div class="process_table_r">{{processListDetail.CreatorName}}</div>
+            </div>
+       
+            <div class="process_table">
+                <div class="process_table_l">填表人部门：</div>
+                <div class="process_table_r">{{processListDetail.CreatorDept}}</div>
+            </div>
+            <div class="process_table">
+                <div class="process_table_l">收件人：</div>
+                <div class="process_table_r">{{processListDetail.Consignee}}</div>
+            </div>
+            <div class="process_table">
+                <div class="process_table_l">事由：</div>
+                <div class="process_table_r">{{processListDetail.Reason}}</div>
+            </div>
+        </div>
+        <div class="process_list">
+            <div class="process_title">信息表内容</div>
+            <div class="process_table">
+                <div class="process_table_l">申请内容：</div>
+                <div class="process_table_r" ng-bind-html="deliberatelyTrustDangerousSnippet()"></div>
+            </div>
+        </div>
+
+        <div class="process_list">
+ 
+            <div class="process_table">
+                <div class="process_table_l">附件：</div>
+             
+                <div ng-repeat="attach in processListDetailAttachment">
+                    <div class="process_table_r">
+                        <a href="{{attach.AttachmentPath}}">{{attach.AttachmentTitle}}</a>                      
+                    </div>
+                </div>
+                <div >
+                    <div class="process_table_r">
+                        <a href="http://epwf.tclcom.com/BPMUpload/InfoTransfer/738e14c3-a425-453f-97c9-02408424d8f0.xls">IT 部门联系表 2014-11-12.xls</a><br />
+                        <a href="http://epwf.tclcom.com/BPMUpload/InfoTransfer/67edad8e-2aa7-41bd-9ec6-e9ddb2bcd6ff.txt">checkin.txt</a><br />
+                        <a href="http://epwf.tclcom.com/BPMUpload/InfoTransfer/3039f3fd-6082-4a62-98df-4cf577757ee3.docx">VAL共享文档目录结构.docx</a><br />
+                        <a href="http://epwf.tclcom.com/BPMUpload/InfoTransfer/5c7c77b1-7925-4e1e-9a66-2f2ca50ee371.pdf">财报就像一本故事书.pdf</a><br />
+                        <a href="http://epwf.tclcom.com/BPMUpload/InfoTransfer/c1ebb523-5b28-4e1f-9206-88aa36125df0.pptx">s.pptx</a><br />
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="process_list" ng-show="IsShowControl">
+
+            <div class="process_table">
+
+                <div class="process_table_l">Comment：</div>
+                <div class="process_table_r"><textarea style="width:200px;" ng-model="Comments"></textarea></div>
+
+            </div>
+        </div>
+        <div class="process_list">
+            <button class="btn" ng-click="RollBack()" ng-show="IsShowControl">驳回</button> 
+            <button class="btn" ng-click="Approve()" ng-show="IsShowControl">批准</button>        
+           
+            <button class="btn_look" ng-click="showProcessStatus(processListDetail.ProcInsID)">当前状态</button>
+        </div>
+    </div>
+</div>
+
