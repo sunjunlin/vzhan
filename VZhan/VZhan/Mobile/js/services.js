@@ -50,3 +50,25 @@ wxServices.factory('Overlay', ['$resource', '$http',
 
   }]);
 
+wxServices.factory('Drag', ['$resource', '$http',
+    function ($resource, $http) {
+
+        var Drag = {};
+
+        return Drag;
+
+
+
+    }]);
+
+wxServices.factory('Swipe', ['$resource', '$http',
+    function ($resource, $http) {
+
+        var Swipe = {};
+
+        return Swipe;
+
+
+
+    }]);
+

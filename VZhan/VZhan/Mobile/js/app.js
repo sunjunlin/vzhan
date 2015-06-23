@@ -49,8 +49,15 @@ wxApp.config(['$routeProvider',
       $routeProvider.when('/forms', { templateUrl: 'partials/forms.html', reloadOnSearch: false });
       $routeProvider.when('/dropdown', { templateUrl: 'partials/dropdown.html', reloadOnSearch: false });
       $routeProvider.when('/touch', { templateUrl: 'partials/touch.html', reloadOnSearch: false });
-      $routeProvider.when('/swipe', { templateUrl: 'partials/swipe.html', reloadOnSearch: false });
-      $routeProvider.when('/drag', { templateUrl: 'partials/drag.html', reloadOnSearch: false });
+      $routeProvider.when('/swipe', {
+          templateUrl: 'partials/swipe.html', controller: 'SwipeCtrl',
+
+          reloadOnSearch: false });
+      $routeProvider.when('/drag', {
+          templateUrl: 'partials/drag.html',
+          controller: 'DragCtrl',
+          reloadOnSearch: false
+      });
       $routeProvider.when('/drag2', { templateUrl: 'partials/drag2.html', reloadOnSearch: false });
       $routeProvider.when('/carousel', { templateUrl: 'partials/carousel.html', reloadOnSearch: false });
  

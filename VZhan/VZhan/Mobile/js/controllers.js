@@ -33,7 +33,9 @@ wxControllers.controller('ScrollCtrl', ['$scope', '$routeParams', 'Scroll',
 wxControllers.controller('HomeCtrl', ['$scope', '$routeParams', 'Home',
     function ($scope, $routeParams, Home) {
 
- 
+
+        // User agent displayed in home page
+        $scope.userAgent = navigator.userAgent;
     }
 
 ]);
@@ -84,4 +86,34 @@ wxControllers.controller('OverlayCtrl', ['$scope', '$routeParams', 'Overlay',
 
     }
 
+]);
+
+
+wxControllers.controller('DragCtrl', ['$scope', '$routeParams', 'Drag',
+    function ($scope, $routeParams, Overlay) {
+
+        //
+        // 'Drag' screen
+        //
+        $scope.notices = [];
+
+        for (var j = 0; j < 10; j++) {
+            $scope.notices.push({icon: 'envelope', message: 'Notice ' + (j + 1) });
+        }
+
+        $scope.deleteNotice = function(notice) {
+            var index = $scope.notices.indexOf(notice);
+            if (index > -1) {
+                $scope.notices.splice(index, 1);
+            }
+    }
+    }
+]);
+wxControllers.controller('SwipeCtrl', ['$scope', '$routeParams', 'Swipe',
+    function ($scope, $routeParams, Swipe) {
+
+        $scope.swiped = function(direction) {
+            alert('Swiped ' + direction);
+        };
+    }
 ]);
