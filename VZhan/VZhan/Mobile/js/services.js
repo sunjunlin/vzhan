@@ -28,3 +28,25 @@ wxServices.factory('Home', ['$resource', '$http',
 
   }]);
 
+wxServices.factory('Contact', ['$resource', '$http',
+  function ($resource, $http) {
+
+      var Contact = {};
+
+      return Contact;
+
+
+
+  }]);
+
+wxServices.factory('Overlay', ['$resource', '$http',
+  function ($resource, $http) {
+
+      var Overlay = {};
+
+      return Overlay;
+
+
+
+  }]);
+
