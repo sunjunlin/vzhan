@@ -44,7 +44,7 @@ wxApp.config(['$routeProvider',
       $routeProvider.when('/overlay', {
           templateUrl: 'partials/overlay.html',
           controller: 'OverlayCtrl',
-          reloadOnSearch: true
+          reloadOnSearch: false
       });
       $routeProvider.when('/forms', { templateUrl: 'partials/forms.html', reloadOnSearch: false });
       $routeProvider.when('/dropdown', { templateUrl: 'partials/dropdown.html', reloadOnSearch: false });
